@@ -1,0 +1,136 @@
+/* --- Global Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Fonts --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Container --- */
+.container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+/* --- Header Layout --- */
+header {
+    background-color: transparent; /* or just delete this rule */
+}
+
+.header-bar {
+    background-color: #004f90;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.logo h3 {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 28px;
+    margin: 0;
+}
+
+/* Optional: Space out nav links more cleanly */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+
+/* --- Main Intro Section --- */
+#intro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 40px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#intro-text {
+    flex: 1 1 60%;
+}
+
+#intro-text h1 {
+    font-size: 36px;
+    color: #004f90;
+    font-family: 'League Spartan', sans-serif;
+}
+
+#intro-text h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+#intro-text p {
+    margin-bottom: 15px;
+}
+
+/* Optional portrait section styling if you add an image later */
+#intro-portrait {
+    flex: 1 1 30%;
+    min-height: 200px;
+    background-color: #ddd;
+    border-radius: 8px;
+}
+
+/* --- Projects --- */
+#featured-projects {
+    padding: 30px 0;
+}
+
+#featured-projects h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #004f90;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.project-item {
+    padding: 20px;
+    background-color: white;
+    border-left: 4px solid #004f90;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #eee;
+    font-size: 14px;
+}
+
+footer a {
+    color: #004f90;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
