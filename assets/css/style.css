@@ -1,136 +1,292 @@
-/* --- Global Reset --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* --- Root Variables --- */
+:root {
+  /* Fonts */
+  --font-main: 'Poppins', sans-serif;
+  --font-heading: 'League Spartan', sans-serif;
+
+  /* Colors */
+  --color-bg: #f9fcff;
+  --color-text: #333;
+  --color-accent: #342d47;
+  --color-light-bg: #f9fcff;
+  --color-heading: #1f1f1f;
+  --color-subheading: #444;
+  --color-highlight: #4a9edc;
+  --color-footer-bg: #eee;
 }
 
-/* --- Fonts --- */
+/* --- Global Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Base Styles --- */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
 }
 
 /* --- Container --- */
 .container {
-    max-width: 1800px;
-    margin: 0 auto;
-    padding: 2em;
+  max-width: 1800px;
+  margin: 0 auto;
+  /* padding: 2em; */
+}
+/* Fullscreen for hero section */
+#hero {
+  /* min-height: 100vh; Takes up full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 950px) {
+    #hero {
+        min-height: 100vh; /* Takes up full viewport height */
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* --- Header Layout --- */
 header {
-    background-color: transparent; /* or just delete this rule */
+  background-color: transparent;
+  flex-shrink: 0;
 }
 
 .header-bar {
-    background-color: #004f90;
-    color: white;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  background-color: var(--color-accent);
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-
 
 .logo h3 {
-    font-family: 'League Spartan', sans-serif;
-    font-size: 28px;
-    margin: 0;
+  font-family: var(--font-heading);
+  font-size: 28px;
+  margin: 0;
 }
 
-/* Optional: Space out nav links more cleanly */
+/* --- Navigation --- */
 .nav-links {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: opacity 0.3s;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s;
 }
 
 .nav-links a:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
-
 
 /* --- Main Intro Section --- */
 #intro {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    padding: 40px 0;
-    align-items: center;
-    justify-content: space-between;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-light-bg);
+  flex-wrap: wrap;
 }
 
 #intro-text {
-    flex: 1 1 60%;
+  width: 60%;
+  padding: 1em;
+  padding-left: 5%;
 }
 
 #intro-text h1 {
-    font-size: 36px;
-    color: #004f90;
-    font-family: 'League Spartan', sans-serif;
+  font-family: var(--font-heading);
+  font-size: 56pt;
+  font-weight: 800;
+  color: var(--color-heading);
+  margin: -0.25em 0;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 #intro-text h2 {
-    font-size: 24px;
-    margin: 10px 0;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--color-subheading);
+}
+
+#intro-text h2 b {
+  color: var(--color-highlight);
 }
 
 #intro-text p {
-    margin-bottom: 15px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-top: 1rem;
 }
 
-/* Optional portrait section styling if you add an image later */
+#intro-text p:first-of-type b {
+  font-weight: 700;
+}
+
+@media (max-width: 950px) {
+  #intro-text h1 {
+    font-size: 36pt;
+  }
+
+  #intro-text h2 {
+    font-size: 1.5rem;
+  }
+
+  #intro-text p {
+    font-size: 1rem;
+  }
+}
+
+
 #intro-portrait {
-    flex: 1 1 30%;
-    min-height: 200px;
-    background-color: #ddd;
-    border-radius: 8px;
+  width: 35%;
+  align-self: flex-end; /* Aligns the image to bottom of the container */
+  margin-top: 2rem;
+  padding-right: 2em;
 }
 
-/* --- Projects --- */
+#intro-portrait img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Projects Section --- */
 #featured-projects {
-    padding: 30px 0;
+    padding: 30px;
+    background: linear-gradient(
+        to bottom,
+        var(--color-light-bg),
+        #e3dfd6
+    );
 }
 
-#featured-projects h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #004f90;
-    font-family: 'League Spartan', sans-serif;
+#featured-projects h1 {
+    font-family: var(--font-heading), sans-serif;
+    font-size: 48px;
+    text-align: center;
 }
 
-.project-item {
-    padding: 20px;
-    background-color: white;
-    border-left: 4px solid #004f90;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+#featured-projects h1 b {
+    color: var(--color-highlight);
+}
+
+/* Layout for multiple project cards */
+/* .project-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+} */
+
+.project-grid {
+  display: grid;
+  gap: 2rem;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 1rem 0;
+}
+
+
+/* Project card styling */
+.project-card {
+  background-color: white;
+  border-left: 4px solid var(--color-highlight);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Image at top of card */
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Card content */
+.project-content {
+  padding: 20px;
+}
+
+.project-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 0.25rem;
+}
+
+.project-content h4 {
+  font-size: 1rem;
+  color: gray;
+  margin-bottom: 1rem;
+}
+
+.project-content p {
+  font-size: 16px;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.project-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.project-buttons button {
+  background-color: var(--color-highlight);
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.project-buttons button:hover {
+  background-color: var(--color-accent);
 }
 
 /* --- Footer --- */
 footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #eee;
-    font-size: 14px;
+  text-align: center;
+  padding: 20px 0;
+  background-color: var(--color-footer-bg);
+  font-size: 14px;
 }
 
 footer a {
-    color: #004f90;
-    text-decoration: none;
-    margin: 0 8px;
+  color: var(--color-accent);
+  text-decoration: none;
+  margin: 0 8px;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
