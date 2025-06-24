@@ -32,7 +32,7 @@ body {
 
 /* --- Container --- */
 .container {
-  max-width: 1800px;
+  /* max-width: 1800px; */
   margin: 0 auto;
   /* padding: 2em; */
 }
@@ -66,9 +66,20 @@ header {
   flex-wrap: wrap;
 }
 
+.logo {
+  display: flex;
+  align-items: center;   /* vertically center image and text */
+  gap: 0.5rem;           /* spacing between image and name */
+}
+
+.logo-img {
+  height: 28px;          /* fixed height for the image */
+  width: auto;           /* preserve image's aspect ratio */
+}
+
 .logo h3 {
-  font-family: var(--font-heading);
-  font-size: 28px;
+  font-size: 28px;       /* matches the image height */
+  line-height: 1;        /* prevents extra spacing */
   margin: 0;
 }
 
@@ -90,19 +101,39 @@ header {
 }
 
 /* --- Main Intro Section --- */
-#intro {
+/* #intro {
   flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--color-light-bg);
   flex-wrap: wrap;
+} */
+
+/* v2 using background image */
+#intro {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: var(--color-light-bg);
+
+  background-image: url('../img/IntroBackground1.png');
+  background-repeat: no-repeat;
+  background-position: left center; /* left side */
+  background-size: cover; /* or contain/cover as you wish */
 }
 
 #intro-text {
   width: 60%;
-  padding: 1em;
-  padding-left: 5%;
+  padding: 3rem 1.5rem;
+  margin-left: 3%;
+
+  /* 🔥 translucent white background */
+  background-color: rgba(255, 255, 255, 0.8); /* 80% opacity white */
+  border-radius: 1rem; /* rounded corners */
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  */
 }
 
 #intro-text h1 {
