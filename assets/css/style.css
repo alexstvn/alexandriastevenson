@@ -93,11 +93,12 @@ header {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: opacity 0.3s;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  opacity: 0.7;
+  /* opacity: 0.7; */
+  color: skyblue;
 }
 
 /* --- Main Intro Section --- */
@@ -196,12 +197,12 @@ header {
 
 /* --- Projects Section --- */
 #featured-projects {
-    padding: 50px;
-    background: linear-gradient(
-        to bottom,
-        var(--color-light-bg),
-        #e3dfd6
-    );
+  padding: 50px;
+
+  background-image: url('../img/ProjectBackground1.png');
+  background-repeat: no-repeat;
+  background-position: top center; /* left side */
+  background-size: cover; /* or contain/cover as you wish */
 }
 
 #featured-projects h1 {
@@ -212,6 +213,7 @@ header {
 
 #featured-projects h1 b {
     color: var(--color-highlight);
+    font-weight: 800;
 }
 
 /* Carousel Editing */
@@ -346,9 +348,9 @@ header {
 }
 
 .project-content p {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--color-text);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 /* Buttons */
@@ -491,19 +493,33 @@ header {
 
 
 /* --- Footer --- */
-footer {
+/* footer {
   text-align: center;
   padding: 20px 0;
   background-color: var(--color-footer-bg);
   font-size: 14px;
+} */
+.footer-inline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  background-color: #eee;
+  font-size: 14px;
 }
 
-footer a {
+.footer-inline i {
+  font-size: 1.4rem;
+  color: var(--color-highlight);
+  transition: color 0.2s ease, transform 0.2s;
+}
+
+.footer-inline a:hover i {
   color: var(--color-accent);
-  text-decoration: none;
-  margin: 0 8px;
+  transform: scale(1.2);
 }
 
-footer a:hover {
-  text-decoration: underline;
+.footer-inline p {
+  margin: 0;
 }
