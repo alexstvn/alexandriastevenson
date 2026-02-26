@@ -51,9 +51,22 @@ body {
 }
 
 /* --- Header Layout --- */
+
 header {
   background-color: transparent;
   flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .header-bar {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+
+  .logo h3 {
+    font-size: 20px;
+  }
 }
 
 .header-bar {
@@ -78,7 +91,7 @@ header {
 }
 
 .logo h3 {
-  font-size: 28px;       /* matches the image height */
+  font-size: clamp(20pxrem, 5vw, 28px);
   line-height: 1;        /* prevents extra spacing */
   margin: 0;
 }
@@ -139,7 +152,7 @@ header {
 
 #intro-text h1 {
   font-family: var(--font-heading);
-  font-size: 56pt;
+  font-size: clamp(28pt, 5vw, 56pt);
   font-weight: 800;
   color: var(--color-heading);
   margin: -0.25em 0;
@@ -147,7 +160,7 @@ header {
 }
 
 #intro-text h2 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 5vw, 2rem);
   font-weight: 500;
   color: var(--color-subheading);
 }
@@ -157,7 +170,7 @@ header {
 }
 
 #intro-text p {
-  font-size: 1.2rem;
+  font-size: clamp(11pt, 2vw, 1.25rem);
   line-height: 1.6;
   color: var(--color-text);
   margin-top: 1rem;
@@ -168,19 +181,32 @@ header {
 }
 
 @media (max-width: 950px) {
-  #intro-text h1 {
-    font-size: 36pt;
-  }
+  #intro {
+      flex-direction: column;
+      align-items: center;
+    }
 
   #intro-text h2 {
     font-size: 1.5rem;
   }
 
-  #intro-text p {
-    font-size: 1rem;
+  #intro-text {
+    width: 90%;
+    margin: 1.5rem auto;
+  }
+
+  #intro-portrait {
+    width: 70%;
+    padding-right: 0;
+    margin: 0 auto;
   }
 }
 
+@media (max-width: 600px) {
+  #intro-text {
+    padding: 0.5rem 0.25rem;
+  }
+}
 
 #intro-portrait {
   width: 35%;
@@ -196,6 +222,7 @@ header {
 }
 
 /* --- Projects Section --- */
+
 #featured-projects {
   padding: 50px;
 
@@ -205,9 +232,25 @@ header {
   background-size: cover; /* or contain/cover as you wish */
 }
 
+@media (max-width: 600px) {
+  #featured-projects {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    max-width: 100%;
+  }
+}
+
 #featured-projects h1 {
     font-family: var(--font-heading), sans-serif;
-    font-size: 48px;
+    font-size: clamp(24pt, 5vw, 48pt);
     text-align: center;
 }
 
@@ -335,7 +378,7 @@ header {
 }
 
 .project-content h3 {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 5vw, 1.25rem);
   font-weight: 700;
   color: var(--color-heading);
   margin-bottom: 0.25rem;
@@ -348,12 +391,13 @@ header {
 }
 
 .project-content h4 {
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 3vw, 1rem);
   color: gray;
   margin-bottom: 1rem;
 }
 
 .project-content p {
+  font-size: clamp(10pt, 2vw, 14pt);
   font-size: 14px;
   color: var(--color-text);
   margin-bottom: 1rem;
@@ -389,6 +433,16 @@ header {
   align-items: center;
   justify-content: center;
   padding: 2rem 0;
+}
+
+@media (max-width: 700px) {
+  .contact-columns {
+    flex-direction: column;
+  }
+
+  #contact-section {
+    padding: 1.5rem;
+  }
 }
 
 .contact-columns {
