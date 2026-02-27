@@ -219,6 +219,7 @@ header {
   width: 100%;
   height: auto;
   display: block;
+  min-width: 180px;
 }
 
 /* --- Projects Section --- */
@@ -432,7 +433,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
 }
 
 @media (max-width: 700px) {
